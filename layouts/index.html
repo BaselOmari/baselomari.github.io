@@ -1,0 +1,50 @@
+{{- define "main" }}
+
+{{- with .Site.Params.homeInfoParams }}
+<article class="first-entry home-info" style="margin-top: 0; padding-top: 0;">
+  <header class="entry-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="entry-content">
+    <p>{{ .Content | markdownify }}</p>
+  </div>
+  {{- with $.Site.Params.socialIcons }}
+  <div class="social-icons">
+    {{- range . }}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer me"
+      title="{{ .name }}">
+      {{ partial "svg.html" . }}
+    </a>
+    {{- end }}
+  </div>
+  {{- end }}
+</article>
+{{- end }}
+
+{{- $pages := where .Site.RegularPages "Section" "posts" }}
+{{- if $pages }}
+<h2 style="margin-top: 0; margin-bottom: 0.5em;">Posts</h2>
+{{- range $pages }}
+<article class="post-entry">
+  <header class="entry-header">
+    <h3>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h3>
+  </header>
+  {{- if .Description }}
+  <div class="entry-content">
+    <p>{{ .Description }}</p>
+  </div>
+  {{- end }}
+  <footer class="entry-footer">
+    <span>{{ .Date.Format "January 2, 2006" }}</span>
+    {{- if .Site.Params.showReadingTime }}
+    &nbsp;·&nbsp;{{ .ReadingTime }} min
+    {{- end }}
+  </footer>
+  <a class="entry-link" aria-label="post link to {{ .Title }}" href="{{ .Permalink }}"></a>
+</article>
+{{- end }}
+{{- end }}
+
+{{- end }}{{/* end main */}}
