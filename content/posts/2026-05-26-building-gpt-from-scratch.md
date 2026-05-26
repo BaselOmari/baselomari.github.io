@@ -1,12 +1,12 @@
 ---
-layout: post
 title: "Building GPT from Scratch"
 date: 2026-05-26
 categories: [ml, transformers]
 tags: [gpt, deep-learning, nlp]
+math: true
 ---
 
-<!-- 
+<!--
   ============================================================
   FORMATTING GUIDE — delete this section when writing the real post
   ============================================================
@@ -14,7 +14,7 @@ tags: [gpt, deep-learning, nlp]
 
 ## Formatting Reference
 
-Below are examples of the formatting tools available to you in this Jekyll + Kramdown + MathJax setup. Delete everything from here down and replace with your actual content.
+Below are examples of the formatting tools available to you in this Hugo + PaperMod + KaTeX setup. Delete everything from here down and replace with your actual content.
 
 ---
 
@@ -57,7 +57,7 @@ python train.py --epochs 10 --lr 3e-4
 
 ---
 
-### Math (LaTeX via MathJax)
+### Math (LaTeX)
 
 Inline math: the softmax function is $\sigma(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}$.
 
@@ -81,10 +81,10 @@ $$
 ### Images
 
 ```markdown
-![Alt text](/assets/images/my-diagram.png)
+![Alt text](/images/my-diagram.png)
 
 <!-- With caption: -->
-![Architecture diagram](/assets/images/architecture.png)
+![Architecture diagram](/images/architecture.png)
 *Figure 1: The transformer block.*
 ```
 

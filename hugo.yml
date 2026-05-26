@@ -1,0 +1,65 @@
+baseURL: "https://baselomari.github.io/"
+languageCode: en-us
+title: Basel Omari
+theme: PaperMod
+
+paginate: 10
+
+params:
+  env: production
+  description: "Personal blog — thoughts on ML, engineering, and building things from scratch."
+  author: Basel Omari
+  defaultTheme: auto
+  showReadingTime: true
+  showShareButtons: false
+  showPostNavLinks: true
+  showBreadCrumbs: true
+  showCodeCopyButtons: true
+  showToc: true
+
+  homeInfoParams:
+    Title: "Hi, I'm Basel"
+    Content: "I build things and write about them here. Currently interested in ML, systems, and understanding how things work from the ground up."
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/baselomari"
+
+  math: true
+
+markup:
+  highlight:
+    style: monokai
+    lineNos: false
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - pair: ["$$", "$$"]
+            - pair: ["\\[", "\\]"]
+          inline:
+            - pair: ["$", "$"]
+            - pair: ["\\(", "\\)"]
+        enable: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
