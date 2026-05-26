@@ -36,11 +36,11 @@ markup:
       passthrough:
         delimiters:
           block:
-            - pair: ["$$", "$$"]
-            - pair: ["\\[", "\\]"]
+            - ["$$", "$$"]
+            - ["\\[", "\\]"]
           inline:
-            - pair: ["$", "$"]
-            - pair: ["\\(", "\\)"]
+            - ["$", "$"]
+            - ["\\(", "\\)"]
         enable: true
 
 outputs:
